@@ -1,0 +1,39 @@
+<svg width="1000" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4158D0;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C850C0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFCC70;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1000" height="800" fill="url(#grad1)"/>
+  
+  <!-- Border -->
+  <rect x="10" y="10" width="980" height="780" fill="none" stroke="white" stroke-width="8"/>
+  
+  <!-- Dimension markers in corners -->
+  <text x="30" y="60" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="white" stroke="black" stroke-width="2">1000 px</text>
+  <text x="30" y="770" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="white" stroke="black" stroke-width="2">1000 px</text>
+  
+  <!-- Vertical dimension -->
+  <text x="900" y="420" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="white" stroke="black" stroke-width="2" transform="rotate(90 900 420)">800 px</text>
+  
+  <!-- Center text -->
+  <text x="500" y="300" font-family="Arial, sans-serif" font-size="100" font-weight="bold" fill="white" stroke="black" stroke-width="3" text-anchor="middle">1000 × 800</text>
+  
+  <text x="500" y="420" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="white" stroke="black" stroke-width="3" text-anchor="middle">ORIGINAL</text>
+  
+  <text x="500" y="520" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="white" stroke="black" stroke-width="2" text-anchor="middle">TEST IMAGE</text>
+  
+  <!-- Grid lines for visual reference -->
+  <line x1="500" y1="0" x2="500" y2="800" stroke="white" stroke-width="2" opacity="0.3"/>
+  <line x1="0" y1="400" x2="1000" y2="400" stroke="white" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Corner markers -->
+  <circle cx="50" cy="50" r="20" fill="yellow" opacity="0.8"/>
+  <circle cx="950" cy="50" r="20" fill="yellow" opacity="0.8"/>
+  <circle cx="50" cy="750" r="20" fill="yellow" opacity="0.8"/>
+  <circle cx="950" cy="750" r="20" fill="yellow" opacity="0.8"/>
+</svg>
