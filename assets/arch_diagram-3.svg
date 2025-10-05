@@ -1,0 +1,136 @@
+<svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- AWS Cloud Border -->
+  <rect x="30" y="30" width="1140" height="640" fill="none" stroke="#232F3E" stroke-width="3" rx="10"/>
+  
+  <!-- AWS Logo -->
+  <rect x="40" y="40" width="45" height="32" fill="#232F3E" rx="3"/>
+  <text x="48" y="62" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#FF9900">aws</text>
+  
+  <!-- AWS Cloud Text -->
+  <text x="92" y="62" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#232F3E">AWS Cloud</text>
+  
+  <!-- User Icon -->
+  <circle cx="100" cy="200" r="28" fill="#545B64"/>
+  <circle cx="100" cy="190" r="11" fill="#FFFFFF"/>
+  <ellipse cx="100" cy="212" rx="18" ry="14" fill="#FFFFFF"/>
+  <text x="100" y="255" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#232F3E" font-weight="bold">User</text>
+  
+  <!-- Arrow from User to Upload -->
+  <path d="M 130 200 L 180 200" stroke="#232F3E" stroke-width="2.5" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Upload Icon -->
+  <circle cx="215" cy="200" r="28" fill="#C792EA"/>
+  <path d="M 215 185 L 215 212" stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 204 194 L 215 183 L 226 194" stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Arrow from Upload to Image -->
+  <path d="M 245 200 L 285 200" stroke="#232F3E" stroke-width="2.5" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Image File Icon (original) -->
+  <rect x="290" y="170" width="65" height="80" fill="#FFFFFF" stroke="#545B64" stroke-width="2" rx="3"/>
+  <path d="M 290 170 L 290 188 L 308 188 L 308 170 Z" fill="#D0D5DD"/>
+  <rect x="300" y="200" width="45" height="3" fill="#9AA0A6" rx="1"/>
+  <rect x="300" y="208" width="45" height="3" fill="#9AA0A6" rx="1"/>
+  <rect x="300" y="216" width="30" height="3" fill="#9AA0A6" rx="1"/>
+  <text x="322" y="268" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#232F3E">image.jpg</text>
+  
+  <!-- Arrow from Image to S3 Source -->
+  <path d="M 358 200 L 410 200" stroke="#232F3E" stroke-width="2.5" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- S3 Source Bucket -->
+  <rect x="415" y="160" width="140" height="105" fill="#3F8624" rx="6"/>
+  <ellipse cx="485" cy="185" rx="45" ry="11" fill="#61A842"/>
+  <path d="M 440 185 L 440 198 Q 440 207 485 207 Q 530 207 530 198 L 530 185" fill="#3F8624" stroke="#90D36B" stroke-width="1.5"/>
+  <line x1="453" y1="195" x2="465" y2="204" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <line x1="498" y1="195" x2="510" y2="204" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <text x="485" y="235" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">S3 Source</text>
+  <text x="485" y="253" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#FFFFFF">Bucket</text>
+  
+  <!-- S3 Event Trigger (dotted line to Lambda) -->
+  <path d="M 485 268 L 485 320 L 566 320 L 566 355" stroke="#FF9900" stroke-width="2.5" stroke-dasharray="6,4" fill="none"/>
+  <text x="500" y="295" font-family="Arial, sans-serif" font-size="12" fill="#FF9900" font-weight="bold">ObjectCreated</text>
+  
+  <!-- Python Source Code Box -->
+  <rect x="200" y="385" width="105" height="60" fill="#FFFFFF" stroke="#3776AB" stroke-width="2" rx="4"/>
+  <text x="252" y="408" font-family="Courier New, monospace" font-size="11" text-anchor="middle" fill="#3776AB" font-weight="bold">&lt;/&gt;</text>
+  <text x="252" y="425" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#3776AB" font-weight="bold">Python</text>
+  <text x="252" y="438" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#545B64">Source Code</text>
+  
+  <!-- Arrow from Python to Pillow Layer -->
+  <path d="M 308 415 L 328 415" stroke="#3776AB" stroke-width="2" stroke-dasharray="4,3" fill="none"/>
+  
+  <!-- Pillow Layer (dashed box) -->
+  <rect x="333" y="385" width="105" height="60" fill="#FFF4E6" stroke="#FF9900" stroke-width="2" stroke-dasharray="4,3" rx="4"/>
+  <text x="385" y="412" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#FF9900" font-weight="bold">Pillow</text>
+  <text x="385" y="428" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#FF9900" font-weight="bold">Layer</text>
+  
+  <!-- Arrow from Pillow Layer to Lambda -->
+  <path d="M 441 415 L 461 415" stroke="#FF9900" stroke-width="2" stroke-dasharray="4,3" fill="none"/>
+  
+  <!-- Lambda Function -->
+  <rect x="466" y="360" width="200" height="145" fill="#FF9900" stroke="#232F3E" stroke-width="2" rx="6"/>
+  <path d="M 516 400 L 566 440 L 616 400 L 616 455 L 566 495 L 516 455 Z" fill="#FFFFFF"/>
+  <text x="566" y="525" font-family="Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Resizer Lambda</text>
+  
+  <!-- Arrow from Lambda to S3 Output -->
+  <path d="M 671 425 L 761 405" stroke="#232F3E" stroke-width="2.5" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- S3 Output Bucket -->
+  <rect x="766" y="360" width="140" height="105" fill="#3F8624" rx="6"/>
+  <ellipse cx="836" cy="385" rx="45" ry="11" fill="#61A842"/>
+  <path d="M 791 385 L 791 398 Q 791 407 836 407 Q 881 407 881 398 L 881 385" fill="#3F8624" stroke="#90D36B" stroke-width="1.5"/>
+  <line x1="804" y1="395" x2="816" y2="404" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <line x1="849" y1="395" x2="861" y2="404" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <text x="836" y="435" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">S3 Output</text>
+  <text x="836" y="453" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#FFFFFF">Bucket</text>
+  
+  <!-- Arrow from S3 Output to Resized File -->
+  <path d="M 911 405 L 961 405" stroke="#232F3E" stroke-width="2.5" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Resized Image File -->
+  <rect x="966" y="375" width="65" height="80" fill="#FFFFFF" stroke="#545B64" stroke-width="2" rx="3"/>
+  <path d="M 966 375 L 966 393 L 984 393 L 984 375 Z" fill="#D0D5DD"/>
+  <rect x="976" y="405" width="45" height="3" fill="#9AA0A6" rx="1"/>
+  <rect x="976" y="413" width="45" height="3" fill="#9AA0A6" rx="1"/>
+  <rect x="976" y="421" width="30" height="3" fill="#9AA0A6" rx="1"/>
+  <text x="998" y="470" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#232F3E">resized-</text>
+  <text x="998" y="482" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#232F3E">image.jpg</text>
+  
+  <!-- IAM Role and Policy -->
+  <rect x="200" y="540" width="130" height="90" fill="#FCE8EC" stroke="#DD344C" stroke-width="2" rx="6"/>
+  <rect x="220" y="562" width="23" height="18" fill="#D4EDDA" stroke="#5CB85C" stroke-width="1" rx="2"/>
+  <text x="231" y="576" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#5CB85C" font-weight="bold">✓</text>
+  <rect x="248" y="562" width="23" height="18" fill="#D4EDDA" stroke="#5CB85C" stroke-width="1" rx="2"/>
+  <text x="259" y="576" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#5CB85C" font-weight="bold">✓</text>
+  <rect x="276" y="562" width="23" height="18" fill="#F8D7DA" stroke="#DD344C" stroke-width="1" rx="2"/>
+  <text x="287" y="576" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#DD344C" font-weight="bold">✗</text>
+  <text x="265" y="602" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#DD344C" font-weight="bold">IAM Role</text>
+  <text x="265" y="620" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#545B64">and Policy</text>
+  
+  <!-- AssumeRole arrow -->
+  <path d="M 330 545 L 500 510" stroke="#DD344C" stroke-width="2" stroke-dasharray="6,4" fill="none"/>
+  <text x="405" y="525" font-family="Arial, sans-serif" font-size="11" fill="#DD344C" font-weight="bold">AssumeRole</text>
+  
+  <!-- CloudWatch Logs -->
+  <rect x="640" y="540" width="130" height="90" fill="#FCE8F3" stroke="#E7157B" stroke-width="2" rx="6"/>
+  <circle cx="690" cy="570" r="11" fill="none" stroke="#E7157B" stroke-width="2"/>
+  <path d="M 701 570 L 717 570" stroke="#E7157B" stroke-width="2"/>
+  <rect x="657" y="590" width="32" height="3" fill="#E7157B" opacity="0.6" rx="1"/>
+  <rect x="657" y="598" width="32" height="3" fill="#E7157B" opacity="0.6" rx="1"/>
+  <rect x="657" y="606" width="22" height="3" fill="#E7157B" opacity="0.6" rx="1"/>
+  <text x="705" y="600" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#E7157B" font-weight="bold">CloudWatch</text>
+  <text x="705" y="617" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#545B64">Logs</text>
+  
+  <!-- Arrow from Lambda to CloudWatch -->
+  <path d="M 621 505 L 680 560" stroke="#E7157B" stroke-width="2" fill="none" marker-end="url(#arrowhead2)"/>
+  
+  <!-- Arrow marker definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#232F3E"/>
+    </marker>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#E7157B"/>
+    </marker>
+  </defs>
+</svg>
