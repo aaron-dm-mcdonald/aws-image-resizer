@@ -10,7 +10,7 @@ The entire infrastructure is provisioned with Terraform.
 ## Architecture
 
 ### Architecture Diagram
-![Diagram]()
+![Diagram](./assets/arch_diagram-4.svg)
 
 ### Architecture Overview
 
@@ -43,28 +43,19 @@ While this project is designed for Terraform deployment, you can manually test t
 
 ## Terraform Deployment Instructions
 
-### 0. Build the Pillow Lambda Layer
 
-Before deploying, create the Lambda layer containing Pillow:
-
-```sh
-chmod +x build_pillow_layer.sh
-./build_pillow_layer.sh
-```
-
-This creates `./layers/pillow-layer.zip` with the Pillow library.
 
 ### 1. Move to your projects folder
-Move into your projects folder inside the TheoWAF directory on your computer for example.
+Move into your projects folder (inside the TheoWAF directory on your computer for example).
 
 ### 2. Clone the Repository
 
 ```sh
-git clone <REPOSITORY-URL>
-cd <REPOSITORY-NAME>
+git clone https://github.com/aaron-dm-mcdonald/aws-image-resizer.git
+cd aws-image-resizer
 ```
 
-### 3. Initialize and Apply Terraform
+### 3. Terraform workflow
 
 ```sh
 terraform init
@@ -76,13 +67,15 @@ terraform apply -auto-approve
 Note the bucket names during terraform runtime or execute:
 
 ```sh
-terraform output s3_bucket_name
+terraform output s3_source_bucket_name
+terraform output s3_output_bucket_name
 ```
 
 You can also find both bucket names in the AWS Console under S3.
 
-### 5. Upload an Image File (Triggering Lambda)
+### 5. Manual testing workflow 
 
+#### a. Upload an image
 ```sh
 aws s3 cp <LOCAL-IMAGE-PATH> s3://<YOUR-SOURCE-BUCKET-NAME>/
 ```
@@ -92,7 +85,7 @@ Example:
 aws s3 cp ~/Pictures/photo.jpg s3://resize-source-abc123/
 ```
 
-### 6. Verify Resized Image in Output Bucket
+#### b. Verify Resized Image in Output Bucket
 
 ```sh
 aws s3 ls s3://<YOUR-OUTPUT-BUCKET-NAME>/
@@ -100,11 +93,39 @@ aws s3 ls s3://<YOUR-OUTPUT-BUCKET-NAME>/
 
 You should see a file named `resized-photo.jpg` (or whatever your original filename was, prefixed with "resized-").
 
-### 7. Download and Compare
+#### c. Download and Compare
 
 ```sh
-aws s3 cp s3://<YOUR-OUTPUT-BUCKET-NAME>/resized-photo.jpg ./resized-photo.jpg
+aws s3 cp s3://<YOUR-OUTPUT-BUCKET-NAME>/resized-<original image name> <target file path to download it>
 ```
+
+### Cleanup
+
+To destroy all resources created by Terraform:
+
+```sh
+terraform destroy -auto-approve
+```
+
+Note: Buckets are configured with `force_destroy = true`, so they will be deleted even if they contain objects.# aws-image-resizer
+
+## Automated testing
+
+```bash
+
+# Create virtual environment
+python -m venv venv
+
+# Activate it (Git Bash on Windows)
+source venv/Scripts/activate
+
+# Install dependencies
+pip install boto3 pillow
+
+# Run the test
+python ./test/test_resizer.py
+```
+
 
 ## Notes
 
@@ -137,20 +158,12 @@ This Lambda function listens for new file uploads to an S3 bucket and automatica
 ├── 3-storage.tf                   # S3 buckets and event notifications
 ├── 4-iam.tf                       # IAM roles, policies, and permissions
 ├── 5-output.tf                    # Terraform outputs
-├── build_pillow_layer.sh          # Script to build Pillow Lambda layer
 ├── src/
 │   └── lambda_function.py         # Lambda function source code
-├── layers/
-│   └── pillow-layer.zip          # Generated Pillow layer (after running build script)
+├── assets/
+│   └── lambda_function.py         # Architecture diagram drafts and test images
+├── .gitignore                     # gitignore for secrets and unneeded terraform artifacts
 └── README.md                      # This file
 ```
 
-## Cleanup
 
-To destroy all resources created by Terraform:
-
-```sh
-terraform destroy -auto-approve
-```
-
-Note: Buckets are configured with `force_destroy = true`, so they will be deleted even if they contain objects.# aws-image-resizer
