@@ -10,7 +10,7 @@ The entire infrastructure is provisioned with Terraform.
 ## Architecture
 
 ### Architecture Diagram
-![Diagram](./assets/arch_diagram-4-white.svg)
+![Diagram](./assets/arch_diagram-5.svg)
 
 ### Architecture Overview
 
